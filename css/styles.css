@@ -55,12 +55,16 @@ section h2 {
   text-align: center;
   background-color: var(--rosy-brown);
 }
+.cards-container {
+  text-align: center;
+}
 .flashcard {
   position: relative;
   background-color: #fff;
   height: 200px;
   width: 200px;
   margin: 20px auto;
+  display: inline-block;
 }
 .flashcard h3 {
   text-align: center;
@@ -77,7 +81,7 @@ section h2 {
 .flashcard:hover .back {
   transition: all 0.5s 0.5s;
   transform: rotateX(0deg) rotateZ(0deg);
-  position: relative;
+  position: absolute;
 }
 .flashcard .front {
   transform: rotateX(0deg) rotateZ(0deg);
@@ -92,8 +96,8 @@ section h2 {
 .flashcard .back {
   transition: all 0.5s 0s;
   transform: rotateX(90deg) rotateZ(90deg);
-  top: -100%;
-  position: relative;
+  top: 0;
+  position: absolute;
   padding: 20px;
   overflow: auto;
   width: 100%;
