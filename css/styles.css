@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #98a886;
+  --primary-color-dark: #7b876d;
+  --secondary-color: #465c69;
+  --rosy-brown: #c4a69d;
+  font-size: 16px;
+}
+
+header {
+  position: sticky;
+  top: -57.6px;
+  background-color: var(--primary-color);
+  z-index: 100;
+}
+header .logo {
+  text-align: center;
+  background-color: #465c69;
+  padding: 10px;
+}
+header nav {
+  text-align: center;
+}
+header nav ul li {
+  display: inline-block;
+}
+header nav ul li a {
+  text-decoration: none;
+  display: block;
+  color: #fff;
+  padding: 5px 20px;
+}
+header ul li a:hover {
+  transition: all 0.4s;
+  background-color: var(--primary-color-dark);
+}
+.line {
+  position: relative;
+  top: 0;
+  transform: rotateZ(0deg);
+}
+main {
+  background-color: var(--primary-color);
+}
+section {
+  background-color: var(--secondary-color);
+  padding: 50px;
+}
+section h2 {
+  text-align: center;
+  background-color: var(--rosy-brown);
+}
+.flashcard {
+  position: relative;
+  background-color: #fff;
+  height: 200px;
+  width: 200px;
+  margin: 20px auto;
+}
+.flashcard h3 {
+  text-align: center;
+  position: absolute;
+  width: 180px;
+  left: 10px;
+  top: 40%;
+}
+.flashcard:hover .front {
+  transition: all 0.5s 0s;
+  transform: rotateX(90deg) rotateZ(90deg);
+  position: relative;
+}
+.flashcard:hover .back {
+  transition: all 0.5s 0.5s;
+  transform: rotateX(0deg) rotateZ(0deg);
+  position: relative;
+}
+.flashcard .front {
+  transform: rotateX(0deg) rotateZ(0deg);
+  transition: all 0.5s 0.5s;
+  position: relative;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: var(--primary-color-dark);
+}
+.flashcard .back {
+  transition: all 0.5s 0s;
+  transform: rotateX(90deg) rotateZ(90deg);
+  top: -100%;
+  position: relative;
+  padding: 20px;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  background-color: var(--rosy-brown);
+}
+#checkbox {
+  display: none;
+}
+@media screen and (max-width: 900px) {
+  header {
+    background: var(--secondary-color);
+  }
+  header nav ul li {
+    display: block;
+    font-size: 2rem;
+  }
+  header nav ul li a {
+    padding: 10px 0px;
+  }
+  .hamburger {
+    padding: 10px;
+  }
+  .line {
+    width: 50px;
+    height: 5px;
+    background-color: #fff;
+    margin: auto;
+    margin-bottom: 10px;
+  }
+  .bottom {
+    margin-bottom: 0;
+  }
+  header nav {
+    transition: all 0.5s;
+    max-height: 0;
+    overflow: hidden;
+  }
+  #checkbox:checked ~ nav {
+    max-height: 300px;
+  }
+  #checkbox:checked ~ .hamburger .top {
+    top: 15px;
+    transform: rotateZ(45deg);
+  }
+  #checkbox:checked ~ .hamburger .middle {
+    opacity: 0;
+  }
+  #checkbox:checked ~ .hamburger .bottom {
+    top: -15px;
+    transform: rotateZ(-45deg);
+  }
+}
